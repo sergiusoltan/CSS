@@ -7,7 +7,6 @@ public class ShowResultsWindow extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTable tvStudents;
 
     public ShowResultsWindow() {
         setContentPane(contentPane);

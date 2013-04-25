@@ -1,4 +1,4 @@
-package main.model;
+package main.java;
 
 /**
  * Created with IntelliJ IDEA.
@@ -89,5 +89,10 @@ public class Student {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return getNume() + " " + getPrenume();
     }
 }

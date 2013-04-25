@@ -1,12 +1,18 @@
 package main.ui;
 
+import main.java.ReportGenerator;
+
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.IOException;
 
 public class MainWindow extends JDialog {
     private JPanel contentPane;
     private JButton buttonCancel;
-    private JButton addStudentButton;
+    private JButton selectStudentButton;
     private JButton calculateButton;
     private JButton reportButton;
     private JButton viewStudentsButton;
@@ -23,27 +29,27 @@ public class MainWindow extends JDialog {
             }
         });
 
-        addStudentButton.addActionListener(new ActionListener() {
+        selectStudentButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onAddStudentButton();
+                onSelectStudent();
             }
         });
 
         calculateButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onCalculateButton();
+                onCalculate();
             }
         });
 
         reportButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onReportButton();
+                onReport();
             }
         });
 
         viewStudentsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onViewStudentButton();
+                onViewStudent();
             }
         });
 
@@ -68,27 +74,56 @@ public class MainWindow extends JDialog {
         dispose();
     }
 
-    private void onAddStudentButton(){
-        AddStudentWindow addStudentWindow = new AddStudentWindow();
-        addStudentWindow.pack();
-        addStudentWindow.setLocationRelativeTo(this);
-        addStudentWindow.setVisible(true);
+    private void onSelectStudent(){
+        SelectStudentWindow selectStudentWindow = new SelectStudentWindow();
+        runWindow(selectStudentWindow);
     }
 
-    private void onCalculateButton(){
-        //calculate results
-        onViewStudentButton();
+    private void onCalculate(){
+        //todo: call calculate media to all students
+        onViewStudent();
     }
 
-    private void onReportButton(){
-        //generate Report
+    private void onReport(){
+        JFileChooser fileChooser = new JFileChooser(new File(".").getAbsoluteFile());
+        FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                "PDF files", "pdf");
+        fileChooser.setFileFilter(filter);
+        if(JFileChooser.APPROVE_OPTION != fileChooser.showSaveDialog(null)){
+            return;
+        }
+        String filename = fileChooser.getSelectedFile().getAbsolutePath();
+        new ReportGenerator(ReportGenerator.staticList,filename).generate();
+        runFile(filename);
     }
 
-    private void onViewStudentButton(){
+    public static void runFile(String filename){
+        if (Desktop.isDesktopSupported()) {
+            try {
+                File myFile = new File(filename);
+                if(!myFile.exists()){
+                    showMessageWindow("File doesn't exist:\n\t " + filename,"Report");
+                    return;
+                }
+                Desktop.getDesktop().open(myFile);
+            } catch (IOException ex) {
+                showMessageWindow("Could not open generated file:\n\t " + filename,"Report");
+            }
+        }
+    }
+
+    private void onViewStudent(){
         ShowResultsWindow showResultsWindow = new ShowResultsWindow();
-        showResultsWindow.pack();
-        showResultsWindow.setLocationRelativeTo(this);
-        showResultsWindow.setVisible(true);
+        runWindow(showResultsWindow);
+    }
+    public static void runWindow(JDialog window){
+        window.pack();
+        window.setLocationRelativeTo(null);
+        window.setVisible(true);
+    }
+
+    public static void showMessageWindow(String message, String title){
+        JOptionPane.showMessageDialog(null,message,title,JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static void main(String[] args) {

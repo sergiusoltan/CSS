@@ -1,6 +1,6 @@
 package main.ui;
 
-import main.model.Student;
+import main.java.Student;
 
 import javax.swing.*;
 import java.awt.*;
@@ -51,6 +51,21 @@ public class AddStudentWindow extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }
+
+    public AddStudentWindow(Student student){
+        this();
+        if(student == null){
+            MainWindow.showMessageWindow("Invalid Student","Edit");
+            onCancel();
+        }
+        this.student = student;
+        this.buttonOK.setText("Edit");
+        this.tfNume.setText(student.getNume());
+        this.tfPrenume.setText(student.getPrenume());
+        this.tfBac.setText(student.getMedieBac().toString());
+        this.tfMedieLiceu.setText(student.getMedieLiceu().toString());
+        this.tfMediaExamen.setText(student.getMedieExamen().toString());
     }
 
     private void onOK() {

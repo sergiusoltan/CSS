@@ -101,12 +101,13 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="bb020" class="javax.swing.JButton" binding="addStudentButton" default-binding="true">
+                  <component id="bb020" class="javax.swing.JButton" binding="selectStudentButton">
                     <constraints>
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="Add Student"/>
+                      <hideActionText value="true"/>
+                      <text value="Select Student"/>
                     </properties>
                   </component>
                   <component id="99a62" class="javax.swing.JButton" binding="reportButton" default-binding="true">

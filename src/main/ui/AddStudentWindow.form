@@ -34,7 +34,7 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="OK"/>
+                  <text value="Save"/>
                 </properties>
               </component>
               <component id="5723f" class="javax.swing.JButton" binding="buttonCancel">
@@ -71,7 +71,7 @@
                 </constraints>
                 <properties>
                   <labelFor value="df2af"/>
-                  <text value="Nume              "/>
+                  <text value="Name                "/>
                 </properties>
               </component>
               <component id="df2af" class="javax.swing.JTextField" binding="tfNume">
@@ -98,7 +98,7 @@
                 </constraints>
                 <properties>
                   <labelFor value="8cd1d"/>
-                  <text value="Medie Bac       "/>
+                  <text value="Bac average     "/>
                 </properties>
               </component>
               <component id="8cd1d" class="javax.swing.JTextField" binding="tfBac">
@@ -125,7 +125,7 @@
                 </constraints>
                 <properties>
                   <labelFor value="1c45e"/>
-                  <text value="Medie Liceu    "/>
+                  <text value="Liceum average"/>
                 </properties>
               </component>
               <component id="1c45e" class="javax.swing.JTextField" binding="tfMedieLiceu">
@@ -152,7 +152,7 @@
                 </constraints>
                 <properties>
                   <labelFor value="9bfff"/>
-                  <text value="Prenume         "/>
+                  <text value="Forename         "/>
                 </properties>
               </component>
               <component id="9bfff" class="javax.swing.JTextField" binding="tfPrenume">
@@ -179,7 +179,7 @@
                 </constraints>
                 <properties>
                   <labelFor value="3dca4"/>
-                  <text value="Medie Examen"/>
+                  <text value="Exam average  "/>
                 </properties>
               </component>
               <component id="3dca4" class="javax.swing.JTextField" binding="tfMediaExamen">
