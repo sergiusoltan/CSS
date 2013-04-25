@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6f2799f-285c-4549-bb53-97b8e1be1237" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ui/AddStudentWindow.form" afterPath="$PROJECT_DIR$/src/main/ui/AddStudentWindow.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ui/AddStudentWindow.java" afterPath="$PROJECT_DIR$/src/main/ui/AddStudentWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ui/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/ui/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ui/ShowResultsWindow.form" afterPath="$PROJECT_DIR$/src/main/ui/ShowResultsWindow.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ui/ShowResultsWindow.java" afterPath="$PROJECT_DIR$/src/main/ui/ShowResultsWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Student.java" afterPath="$PROJECT_DIR$/src/main/java/Student.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CSS_Project.iws" />
@@ -16,7 +10,7 @@
     <file path="/AddStudentWindow.java" changelist="f6f2799f-285c-4549-bb53-97b8e1be1237" time="1366913739059" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/TableData.java" changelist="f6f2799f-285c-4549-bb53-97b8e1be1237" time="1366659096339" ignored="false" />
     <file path="/Person.java" changelist="f6f2799f-285c-4549-bb53-97b8e1be1237" time="1366661305607" ignored="false" />
-    <file path="/Dummy.txt" changelist="f6f2799f-285c-4549-bb53-97b8e1be1237" time="1366913216578" ignored="false" />
+    <file path="/Dummy.txt" changelist="f6f2799f-285c-4549-bb53-97b8e1be1237" time="1366916938264" ignored="false" />
     <file path="/StudentType.java" changelist="f6f2799f-285c-4549-bb53-97b8e1be1237" time="1366736628730" ignored="false" />
     <file path="/Student.java" changelist="f6f2799f-285c-4549-bb53-97b8e1be1237" time="1366916018888" ignored="false" />
     <file path="/OperationsService.java" changelist="f6f2799f-285c-4549-bb53-97b8e1be1237" time="1366662081794" ignored="false" />
@@ -577,7 +571,11 @@
       <created>1366913239265</created>
       <updated>1366913239265</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="devel">
+      <created>1366916946512</created>
+      <updated>1366916946512</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
