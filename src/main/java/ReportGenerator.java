@@ -1,9 +1,6 @@
 package main.java;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.Phrase;
+import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -54,7 +51,9 @@ public class ReportGenerator {
         Document document = new Document(PageSize.A4,Const,Const,Const,Const);
         PdfWriter.getInstance(document, new FileOutputStream(outputFileName,false));
         document.open();
-        document.addTitle("Admission Report");
+
+        Paragraph p  = new Paragraph("Admission report");
+        document.add(p);
 
         PdfPTable table = createTableHeader();
         addTableData(table);
@@ -70,9 +69,11 @@ public class ReportGenerator {
     }
 
     private PdfPTable createTableHeader(){
-        PdfPTable table = new PdfPTable(6);
+        PdfPTable table = new PdfPTable(7);
         table.setSpacingBefore(15);
         table.setSpacingAfter(15);
+        table.setLockedWidth(false);
+        table.setWidthPercentage(100f);
 
         PdfPCell c1 = new PdfPCell(new Phrase("Name"));
         table.addCell(c1);
@@ -89,8 +90,11 @@ public class ReportGenerator {
         PdfPCell c5 = new PdfPCell(new Phrase("Exam average"));
         table.addCell(c5);
 
-        PdfPCell c6 = new PdfPCell(new Phrase("Admission result"));
+        PdfPCell c6 = new PdfPCell(new Phrase("Admission average"));
         table.addCell(c6);
+
+        PdfPCell c7 = new PdfPCell(new Phrase("Admission result"));
+        table.addCell(c7);
 
         return table;
     }
@@ -102,6 +106,7 @@ public class ReportGenerator {
             table.addCell(getCellValue(student.getMedieBac()));
             table.addCell(getCellValue(student.getMedieLiceu()));
             table.addCell(getCellValue(student.getMedieExamen()));
+            table.addCell(getCellValue(student.getMedieAdmitere()));
             table.addCell(getCellValue(student.getStudentType()));
         }
     }
