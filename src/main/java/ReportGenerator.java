@@ -112,4 +112,8 @@ public class ReportGenerator {
         }
         return value.toString();
     }
+
+    public String getOutputFileName() {
+        return outputFileName;
+    }
 }

@@ -93,7 +93,9 @@ public class MainWindow extends JDialog {
             return;
         }
         String filename = fileChooser.getSelectedFile().getAbsolutePath();
-        new ReportGenerator(ReportGenerator.staticList,filename).generate();
+        ReportGenerator reportGenerator = new ReportGenerator(ReportGenerator.staticList,filename);
+        reportGenerator.generate();
+        filename = reportGenerator.getOutputFileName();
         runFile(filename);
     }
 
