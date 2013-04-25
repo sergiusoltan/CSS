@@ -84,7 +84,7 @@ public class MainWindow extends JDialog {
         onViewStudent();
     }
 
-    private void onReport(){
+    public static void onReport(){
         JFileChooser fileChooser = new JFileChooser(new File(".").getAbsoluteFile());
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
                 "PDF files", "pdf");

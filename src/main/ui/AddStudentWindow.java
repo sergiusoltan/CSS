@@ -15,6 +15,7 @@ public class AddStudentWindow extends JDialog {
     private JTextField tfBac;
     private JTextField tfMedieLiceu;
     private JTextField tfMediaExamen;
+    private JTextField admissionAverage;
     private boolean validInput = true;
     private Student student;
 
@@ -66,6 +67,7 @@ public class AddStudentWindow extends JDialog {
         this.tfBac.setText(student.getMedieBac().toString());
         this.tfMedieLiceu.setText(student.getMedieLiceu().toString());
         this.tfMediaExamen.setText(student.getMedieExamen().toString());
+        this.admissionAverage.setText(student.getMedieAdmitere().toString());
     }
 
     private void onOK() {

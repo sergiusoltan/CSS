@@ -17,7 +17,11 @@ public class Student {
     private Double medieAdmitere;
     private StudentType studentType;
 
-    public Student(){}
+    public static String[] columnNames = {"Name","Forename","Bac Average","Exam Average","Liceum Average","Admission Average","Admission Type"};
+
+    public Student(){
+       this.medieAdmitere = 0d;
+    }
 
     public Student(String nume, String prenume, Double medieBac, Double medieExamen, Double medieLiceu) {
         this.nume = nume;
@@ -25,6 +29,27 @@ public class Student {
         this.medieBac = medieBac;
         this.medieExamen = medieExamen;
         this.medieLiceu = medieLiceu;
+        this.medieAdmitere = 0d;
+    }
+
+    public String[] getVector(){
+        String[] values = new String[7];
+        values[0] = getNume();
+        values[1] = getPrenume();
+        values[2] = getMedieBac().toString();
+        values[3] = getMedieExamen().toString();
+        values[4] = getMedieLiceu().toString();
+        values[5] = getMedieAdmitere().toString();
+        values[6] = getStudentTypeValidation();
+
+        return values;
+    }
+
+    private String getStudentTypeValidation(){
+        if(studentType == null){
+            return "undefined";
+        }
+        return studentType.toString();
     }
 
     public String getNume() {
